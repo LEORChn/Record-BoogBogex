@@ -2,7 +2,7 @@
 // @name         Simple Faster Flash
 // @name:zh-CN   Flash 简单优化
 // @namespace    https://greasyfork.org/users/159546
-// @version      1.0
+// @version      1.0.1
 // @description  Faster flash from simple way.
 // @description:zh-CN 略微提升 Flash 元素的性能。
 // @author       LEORChn
@@ -26,7 +26,7 @@ function __object(){
         if(v[i].type.toLowerCase().includes('flash')){
             var qNode;
             for(var i2=0,v2=v[i].childNodes,l2=v2.length;i2<l2;i2++)
-                if(v2[i2].name.includes('quality')){
+                if(v2[i2].name && v2[i2].name.includes('quality')){//maybe multi object elements nesting. Like news.163.com
                     qNode=v2[i2];
                     break;
                 }
