@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name         Faster Flash
+// @name         Simple Faster Flash
 // @name:zh-CN   Flash 简单优化
 // @namespace    https://greasyfork.org/users/159546
 // @version      1.0
-// @description  Faster flash.
+// @description  Faster flash from simple way.
 // @description:zh-CN 略微提升 Flash 元素的性能。
 // @author       LEORChn
 // @include      *
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
-var done=0,countdown=10 *5;
+var done=0,countdown=10 *5;// 10 sec
 (function(){
 	recheck();
 })();
@@ -53,6 +53,6 @@ function pageloaded(){ return document.readyState.toLowerCase()=='complete'; }
 function finaly(){
     countdown--;//Use count down because some flash element using js to add in page. Like live.bilibili.com...
     if(countdown>0)return false;
-    console.log('Faster Flash: Faster '+done+' flash element(s).');
+    try{console.log('Simple Faster Flash: Faster '+done+' flash element(s).');}catch(e){}
     return true;
 }
